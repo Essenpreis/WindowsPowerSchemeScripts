@@ -1,14 +1,16 @@
 # Activates the Windows Balanced Power Scheme
 
-. .\Set-PowerScheme.ps1
+. $PSScriptRoot\Set-PowerScheme.ps1 
 Set-PowerScheme -SchemeName "Balanced" -SchemeGUID "381b4222-f694-41f0-9685-ff5bb260df2e"
 powercfg /list
 
-$tasks = "Taskmgr", "ms-settings", "powercfg"
-foreach ($task in $tasks) {
-    Get-Process -Name $task -ErrorAction SilentlyContinue | Stop-Process -Force
-    # Write-Output "Attempting Stop " $task
-}
+
+
+# $tasks = "Taskmgr", "ms-settings", "powercfg"
+# foreach ($task in $tasks) {
+#     Get-Process -Name $task -ErrorAction SilentlyContinue | Stop-Process -Force
+#     # Write-Output "Attempting Stop " $task
+# }
 
 # # Restart the tasks
 # Start-Process "taskmgr.exe"

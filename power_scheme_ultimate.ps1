@@ -1,20 +1,20 @@
 # Activates the Windows Ultimate Performance Power Scheme
 
-. .\Set-PowerScheme.ps1
+. $PSScriptRoot\Set-PowerScheme.ps1 
 Set-PowerScheme -SchemeName "Ultimate Performance" -SchemeGUID "e9a42b02-d5df-448d-aa00-03f14749eb61"
 powercfg /list
 
 
 
 # Open some programs to check
-$tasks = "Taskmgr", "ms-settings", "powercfg"
-foreach ($task in $tasks) {
-    Get-Process -Name $task -ErrorAction SilentlyContinue | Stop-Process -Force
-}
-# Restart the tasks
-Start-Process "taskmgr.exe"
-Start-Process "ms-settings:batterysaver"
-Start-Process "powercfg.cpl"
+# $tasks = "Taskmgr", "ms-settings", "powercfg"
+# foreach ($task in $tasks) {
+#     Get-Process -Name $task -ErrorAction SilentlyContinue | Stop-Process -Force
+# }
+# # Restart the tasks
+# Start-Process "taskmgr.exe"
+# Start-Process "ms-settings:batterysaver"
+# Start-Process "powercfg.cpl"
 
 
 # Taskmgr.exe # Goto tab Performance. Speed should be at 80% to 90% of max processor speed at all time

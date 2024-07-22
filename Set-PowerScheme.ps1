@@ -20,10 +20,10 @@ function Set-PowerScheme {
         # Parse the output to get the new GUID
         $string = $output
         $schemeGUIDToApply = ($string -split "GUID: ")[1] -split " " | Select-Object -First 1
-
     }
 
     # Set the specified power scheme as active
+    Write-Output "Setting powerscheme with guid " + $schemeGUIDToApply
     powercfg /setactive $schemeGUIDToApply
 }
 
