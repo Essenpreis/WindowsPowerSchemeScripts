@@ -2,7 +2,8 @@
 Your Windows computer feels slow? These are scripts setting power schemes in Windows 10/11 to quickly adapt your computer speed to the needs of your current work.
 
 Usage 
-- Download the PS1 scripts.
+- Download the powershell scripts and put them all in the same directory.
+- Open a shell in the directory you downloaded the scripts into.
 - `powershell -File .\power_scheme_ultimate.ps1` - Sets your windows computer to highest performance possible with 100% CPU usage at minimum
 - `powershell -File .\power_scheme_balanced.ps1` - Sets your windows computer back to balanced with 5% usage at minimum
 
